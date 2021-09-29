@@ -10,16 +10,13 @@ import { take } from 'rxjs/operators';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-    public localColorsList: string[] = [];
     private partyInterval = interval(100);
 
     constructor(
         public colorService: ColorService
     ) {}
 
-    ngOnInit(): void {
-        this.colorService.colorsList.subscribe(cl => this.localColorsList = cl);
-    }
+    ngOnInit(): void {}
 
     selectColor(c: string): void {
         this.colorService.setCurrentColor(c);

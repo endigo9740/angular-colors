@@ -5,6 +5,7 @@ import { ColorService } from '../services/color.service';
     selector: '[appColor]'
 })
 export class ColorDirective implements AfterViewInit {
+    // Can define a default color here, I opted not to
     @Input() appColor: string = '';
 
     constructor(
@@ -26,6 +27,7 @@ export class ColorDirective implements AfterViewInit {
         }
     }
 
+    // No sense writting this code twice, just abstracted to a method
     setElementColor(newColor: string): void {
         this.elem.nativeElement.style.backgroundColor = newColor;
     }

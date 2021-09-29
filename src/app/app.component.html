@@ -3,7 +3,7 @@
 
         <!-- Header -->
         <header>
-            <h1>{{localColorsList.length}} Colors!</h1>
+            <h1>{{colorService.colorsList.value.length}} Colors!</h1>
             <button (click)="partyMode()">Party!</button>
         </header>
 
@@ -19,7 +19,7 @@
             </thead>
             <!-- Body -->
             <tbody>
-                <tr *ngFor="let c of localColorsList; index as i">
+                <tr *ngFor="let c of colorService.colorsList.value; index as i">
                     <td>
                         <span class="swatch" [appColor]="c"></span>
                     </td>
