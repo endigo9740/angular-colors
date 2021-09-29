@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+// GLOBAL STYLES
+
+// SASS Vars
+
+$colorBlack66: rgba(0,0,0,0.66);
+$colorBlack33: rgba(0,0,0,0.33);
+$colorBlack10: rgba(0,0,0,0.1);
+
+// Reset
+
+* {margin: 0; padding: 0; border: 0;}
+
+// Typography
+
+// h1, h2, h3, h4, h5, h6 {}
+
+// Elements
+
+html, body {width: 100%; height: 100%;}
+body {
+    font-family: sans-serif;
+    background: #242424; color: white;
+}
+table {
+    border-collapse: collapse;
+    width: 100%; border-radius: 8px; overflow: hidden; text-align: center;
+    thead {background: $colorBlack66;}
+    tbody {
+        background: $colorBlack33;
+        tr {border-top: 1px dotted $colorBlack33;}
+        tr:hover {background: $colorBlack10}
+    }
+    tr th, tr td {padding: 20px;}
+}
+button {padding: 10px 20px; font-size: 18px; font-weight: bold; cursor: pointer;}
+
+// Classes
+.wrap {max-width: 800px; margin: auto;}
