@@ -26,9 +26,12 @@ export class AppComponent implements OnInit {
     }
 
     // https://rxjs.dev/api/index/function/interval
+    // This uses the RxJS built in interval observable
+    // It uses a pipe to trigger the "take" method - essentially how many iterations to run
+    // Then on subscription of each tick (an index) I updat ethe current color to the matching list index
     partyMode(): void {
         this.partyInterval.pipe(
-            take(10)
+            take(this.colorService.colorsList.value.length)
         ).subscribe((tick: any) => {
             this.colorService.currentColor.next(this.colorService.colorsList.value[tick]);
         })
